@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hprc-qc-core"
+version = "0.1.0"
+description = "HPRC Pangenome Quality Control - Core CLI"
+authors = [{name = "HPRC Maintenance and Improvement Working Group"}]
+license = {text = "Apache-2.0"}
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "click>=8.0",
+]
+
+[project.optional-dependencies]
+all = [
+    "hprc-qc-annotation",
+    "hprc-qc-assembly", 
+    "hprc-qc-alignment"
+]
+
+[project.scripts]
+hprc-qc = "hprc_qc.cli:cli"
