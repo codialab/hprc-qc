@@ -1,4 +1,5 @@
 
+import click 
 
 def add_alignment_commands(alignment_group):
     """Add alignment-specific commands to the alignment group."""
