@@ -1,0 +1,20 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: codia001
+Building DAG of jobs...
+MissingInputException in rule all in file "/home/heringer/Projects/hprc-qc/snakemake/pipelines/alignment_qc/Snakefile", line 13:
+Missing input files for rule all:
+    affected files:
+        ../results/t_groups_paths.html
+        ../results/t_reference.html
+        ../results/t.html
+        ../results/t_walks_gaps.html
+        ../results/multiple_repeats.walks.html
+        ../results/repeat_once.html
+        ../results/t_groups_paths2.html
+        ../results/indel.html
+        ../results/small_polymorphism.html
+        ../results/multiple_repeats.html
+        ../results/t_groups_walks.html
+        ../results/t_groups.html
+        ../results/inversion.html

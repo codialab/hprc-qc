@@ -1,0 +1,150 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: codia001
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job        count
+-------  -------
+1             14
+all            1
+panacus       14
+total         29
+
+Select jobs to execute...
+Execute 4 jobs...
+[Tue Sep  2 14:51:55 2025]
+localrule 1:
+    input: /home/heringer/Projects/simple_files/simple_graphs/t_walks_gaps.gfa
+    output: ../working/t_walks_gaps.yaml
+    jobid: 22
+    reason: Missing output files: ../working/t_walks_gaps.yaml
+    wildcards: sample=t_walks_gaps
+    resources: tmpdir=/tmp
+
+[Tue Sep  2 14:51:55 2025]
+localrule 1:
+    input: /home/heringer/Projects/simple_files/simple_graphs/multiple_repeats.walks.gfa
+    output: ../working/multiple_repeats.walks.yaml
+    jobid: 18
+    reason: Missing output files: ../working/multiple_repeats.walks.yaml
+    wildcards: sample=multiple_repeats.walks
+    resources: tmpdir=/tmp
+
+[Tue Sep  2 14:51:55 2025]
+localrule 1:
+    input: /home/heringer/Projects/simple_files/simple_graphs/t_groups.gfa
+    output: ../working/t_groups.yaml
+    jobid: 14
+    reason: Missing output files: ../working/t_groups.yaml
+    wildcards: sample=t_groups
+    resources: tmpdir=/tmp
+
+[Tue Sep  2 14:51:55 2025]
+localrule 1:
+    input: /home/heringer/Projects/simple_files/simple_graphs/t.gfa
+    output: ../working/t.yaml
+    jobid: 10
+    reason: Missing output files: ../working/t.yaml
+    wildcards: sample=t
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file "/home/heringer/Projects/hprc-qc/snakemake/pipelines/alignment_qc/../../rules/panacus_gen_config.smk", line 9:
+Command 'set -euo pipefail;  export GRAPH='/home/heringer/Projects/simple_files/simple_graphs/t.gfa'; cat ../resources/template.yaml | envsubst > ../working/t.yaml' returned non-zero exit status 1.
+[Tue Sep  2 14:51:55 2025]
+Error in rule 1:
+    message: None
+    jobid: 10
+    input: /home/heringer/Projects/simple_files/simple_graphs/t.gfa
+    output: ../working/t.yaml
+    shell:
+        export GRAPH='/home/heringer/Projects/simple_files/simple_graphs/t.gfa'; cat ../resources/template.yaml | envsubst > ../working/t.yaml
+        (command exited with non-zero exit code)
+Removing output files of failed job 1 since they might be corrupted:
+../working/t.yaml
+RuleException:
+CalledProcessError in file "/home/heringer/Projects/hprc-qc/snakemake/pipelines/alignment_qc/../../rules/panacus_gen_config.smk", line 9:
+Command 'set -euo pipefail;  export GRAPH='/home/heringer/Projects/simple_files/simple_graphs/t_walks_gaps.gfa'; cat ../resources/template.yaml | envsubst > ../working/t_walks_gaps.yaml' returned non-zero exit status 1.
+[Tue Sep  2 14:51:55 2025]
+Error in rule 1:
+    message: None
+    jobid: 22
+    input: /home/heringer/Projects/simple_files/simple_graphs/t_walks_gaps.gfa
+    output: ../working/t_walks_gaps.yaml
+    shell:
+        export GRAPH='/home/heringer/Projects/simple_files/simple_graphs/t_walks_gaps.gfa'; cat ../resources/template.yaml | envsubst > ../working/t_walks_gaps.yaml
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/home/heringer/Projects/hprc-qc/snakemake/pipelines/alignment_qc/../../rules/panacus_gen_config.smk", line 9:
+Command 'set -euo pipefail;  export GRAPH='/home/heringer/Projects/simple_files/simple_graphs/multiple_repeats.walks.gfa'; cat ../resources/template.yaml | envsubst > ../working/multiple_repeats.walks.yaml' returned non-zero exit status 1.
+[Tue Sep  2 14:51:55 2025]
+Error in rule 1:
+    message: None
+    jobid: 18
+    input: /home/heringer/Projects/simple_files/simple_graphs/multiple_repeats.walks.gfa
+    output: ../working/multiple_repeats.walks.yaml
+    shell:
+        export GRAPH='/home/heringer/Projects/simple_files/simple_graphs/multiple_repeats.walks.gfa'; cat ../resources/template.yaml | envsubst > ../working/multiple_repeats.walks.yaml
+        (command exited with non-zero exit code)
+Removing output files of failed job 1 since they might be corrupted:
+../working/t_walks_gaps.yaml
+RuleException:
+CalledProcessError in file "/home/heringer/Projects/hprc-qc/snakemake/pipelines/alignment_qc/../../rules/panacus_gen_config.smk", line 9:
+Command 'set -euo pipefail;  export GRAPH='/home/heringer/Projects/simple_files/simple_graphs/t_groups.gfa'; cat ../resources/template.yaml | envsubst > ../working/t_groups.yaml' returned non-zero exit status 1.
+[Tue Sep  2 14:51:55 2025]
+Error in rule 1:
+    message: None
+    jobid: 14
+    input: /home/heringer/Projects/simple_files/simple_graphs/t_groups.gfa
+    output: ../working/t_groups.yaml
+    shell:
+        export GRAPH='/home/heringer/Projects/simple_files/simple_graphs/t_groups.gfa'; cat ../resources/template.yaml | envsubst > ../working/t_groups.yaml
+        (command exited with non-zero exit code)
+Removing output files of failed job 1 since they might be corrupted:
+../working/multiple_repeats.walks.yaml
+Removing output files of failed job 1 since they might be corrupted:
+../working/t_groups.yaml
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Tue Sep  2 14:51:55 2025]
+Error in rule 1:
+    message: None
+    jobid: 22
+    input: /home/heringer/Projects/simple_files/simple_graphs/t_walks_gaps.gfa
+    output: ../working/t_walks_gaps.yaml
+    shell:
+        export GRAPH='/home/heringer/Projects/simple_files/simple_graphs/t_walks_gaps.gfa'; cat ../resources/template.yaml | envsubst > ../working/t_walks_gaps.yaml
+        (command exited with non-zero exit code)
+[Tue Sep  2 14:51:55 2025]
+Error in rule 1:
+    message: None
+    jobid: 18
+    input: /home/heringer/Projects/simple_files/simple_graphs/multiple_repeats.walks.gfa
+    output: ../working/multiple_repeats.walks.yaml
+    shell:
+        export GRAPH='/home/heringer/Projects/simple_files/simple_graphs/multiple_repeats.walks.gfa'; cat ../resources/template.yaml | envsubst > ../working/multiple_repeats.walks.yaml
+        (command exited with non-zero exit code)
+[Tue Sep  2 14:51:55 2025]
+Error in rule 1:
+    message: None
+    jobid: 14
+    input: /home/heringer/Projects/simple_files/simple_graphs/t_groups.gfa
+    output: ../working/t_groups.yaml
+    shell:
+        export GRAPH='/home/heringer/Projects/simple_files/simple_graphs/t_groups.gfa'; cat ../resources/template.yaml | envsubst > ../working/t_groups.yaml
+        (command exited with non-zero exit code)
+[Tue Sep  2 14:51:55 2025]
+Error in rule 1:
+    message: None
+    jobid: 10
+    input: /home/heringer/Projects/simple_files/simple_graphs/t.gfa
+    output: ../working/t.yaml
+    shell:
+        export GRAPH='/home/heringer/Projects/simple_files/simple_graphs/t.gfa'; cat ../resources/template.yaml | envsubst > ../working/t.yaml
+        (command exited with non-zero exit code)
+Complete log(s): /home/heringer/Projects/hprc-qc/snakemake/pipelines/alignment_qc/.snakemake/log/2025-09-02T145155.302591.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

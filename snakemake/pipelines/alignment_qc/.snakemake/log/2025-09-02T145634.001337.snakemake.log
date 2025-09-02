@@ -1,0 +1,194 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: codia001
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job        count
+-------  -------
+1             14
+all            1
+panacus       14
+total         29
+
+Select jobs to execute...
+Execute 4 jobs...
+[Tue Sep  2 14:56:34 2025]
+localrule 1:
+    input: /home/heringer/Projects/simple_files/simple_graphs/t_walks_gaps.gfa
+    output: ../working/t_walks_gaps.yaml
+    jobid: 22
+    reason: Missing output files: ../working/t_walks_gaps.yaml; Code has changed since last execution
+    wildcards: sample=t_walks_gaps
+    resources: tmpdir=/tmp
+
+[Tue Sep  2 14:56:34 2025]
+localrule 1:
+    input: /home/heringer/Projects/simple_files/simple_graphs/multiple_repeats.walks.gfa
+    output: ../working/multiple_repeats.walks.yaml
+    jobid: 18
+    reason: Missing output files: ../working/multiple_repeats.walks.yaml; Code has changed since last execution
+    wildcards: sample=multiple_repeats.walks
+    resources: tmpdir=/tmp
+
+[Tue Sep  2 14:56:34 2025]
+localrule 1:
+    input: /home/heringer/Projects/simple_files/simple_graphs/small_polymorphism.gfa
+    output: ../working/small_polymorphism.yaml
+    jobid: 6
+    reason: Missing output files: ../working/small_polymorphism.yaml; Code has changed since last execution
+    wildcards: sample=small_polymorphism
+    resources: tmpdir=/tmp
+
+[Tue Sep  2 14:56:34 2025]
+localrule 1:
+    input: /home/heringer/Projects/simple_files/simple_graphs/t.gfa
+    output: ../working/t.yaml
+    jobid: 10
+    reason: Missing output files: ../working/t.yaml; Code has changed since last execution
+    wildcards: sample=t
+    resources: tmpdir=/tmp
+
+[Tue Sep  2 14:56:34 2025]
+Finished jobid: 18 (Rule: 1)
+1 of 29 steps (3%) done
+[Tue Sep  2 14:56:34 2025]
+Finished jobid: 22 (Rule: 1)
+2 of 29 steps (7%) done
+[Tue Sep  2 14:56:34 2025]
+Finished jobid: 6 (Rule: 1)
+3 of 29 steps (10%) done
+Select jobs to execute...
+Execute 3 jobs...
+[Tue Sep  2 14:56:34 2025]
+localrule 1:
+    input: /home/heringer/Projects/simple_files/simple_graphs/t_groups.gfa
+    output: ../working/t_groups.yaml
+    jobid: 14
+    reason: Missing output files: ../working/t_groups.yaml; Code has changed since last execution
+    wildcards: sample=t_groups
+    resources: tmpdir=/tmp
+
+[Tue Sep  2 14:56:34 2025]
+localrule panacus:
+    input: ../working/t_walks_gaps.yaml
+    output: ../results/t_walks_gaps.html
+    log: ../logs/panacus/t_walks_gaps.log
+    jobid: 21
+    reason: Missing output files: ../results/t_walks_gaps.html; Input files updated by another job: ../working/t_walks_gaps.yaml
+    wildcards: sample=t_walks_gaps
+    resources: tmpdir=/tmp
+
+[Tue Sep  2 14:56:34 2025]
+localrule 1:
+    input: /home/heringer/Projects/simple_files/simple_graphs/t_groups_paths.gfa
+    output: ../working/t_groups_paths.yaml
+    jobid: 24
+    reason: Missing output files: ../working/t_groups_paths.yaml
+    wildcards: sample=t_groups_paths
+    resources: tmpdir=/tmp
+
+[Tue Sep  2 14:56:34 2025]
+Finished jobid: 10 (Rule: 1)
+4 of 29 steps (14%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Tue Sep  2 14:56:34 2025]
+localrule 1:
+    input: /home/heringer/Projects/simple_files/simple_graphs/multiple_repeats.gfa
+    output: ../working/multiple_repeats.yaml
+    jobid: 16
+    reason: Missing output files: ../working/multiple_repeats.yaml
+    wildcards: sample=multiple_repeats
+    resources: tmpdir=/tmp
+
+[Tue Sep  2 14:56:34 2025]
+Finished jobid: 14 (Rule: 1)
+5 of 29 steps (17%) done
+[Tue Sep  2 14:56:34 2025]
+Finished jobid: 24 (Rule: 1)
+6 of 29 steps (21%) done
+Select jobs to execute...
+RuleException:
+CalledProcessError in file "/home/heringer/Projects/hprc-qc/snakemake/pipelines/alignment_qc/../../rules/panacus.smk", line 9:
+Command 'set -euo pipefail;  RUST_LOG=info panacus report ../working/t_walks_gaps.yaml > ../results/t_walks_gaps.html 2> ../logs/panacus/t_walks_gaps.log' returned non-zero exit status 101.
+[Tue Sep  2 14:56:34 2025]
+Error in rule panacus:
+    message: None
+    jobid: 21
+    input: ../working/t_walks_gaps.yaml
+    output: ../results/t_walks_gaps.html
+    log: ../logs/panacus/t_walks_gaps.log (check log file(s) for error details)
+    shell:
+        RUST_LOG=info panacus report ../working/t_walks_gaps.yaml > ../results/t_walks_gaps.html 2> ../logs/panacus/t_walks_gaps.log
+        (command exited with non-zero exit code)
+Execute 2 jobs...
+[Tue Sep  2 14:56:34 2025]
+localrule panacus:
+    input: ../working/t_groups.yaml
+    output: ../results/t_groups.html
+    log: ../logs/panacus/t_groups.log
+    jobid: 13
+    reason: Missing output files: ../results/t_groups.html; Input files updated by another job: ../working/t_groups.yaml
+    wildcards: sample=t_groups
+    resources: tmpdir=/tmp
+
+[Tue Sep  2 14:56:34 2025]
+localrule 1:
+    input: /home/heringer/Projects/simple_files/simple_graphs/indel.gfa
+    output: ../working/indel.yaml
+    jobid: 2
+    reason: Missing output files: ../working/indel.yaml
+    wildcards: sample=indel
+    resources: tmpdir=/tmp
+
+[Tue Sep  2 14:56:34 2025]
+Finished jobid: 16 (Rule: 1)
+7 of 29 steps (24%) done
+Removing output files of failed job panacus since they might be corrupted:
+../results/t_walks_gaps.html
+[Tue Sep  2 14:56:34 2025]
+Finished jobid: 2 (Rule: 1)
+8 of 29 steps (28%) done
+RuleException:
+CalledProcessError in file "/home/heringer/Projects/hprc-qc/snakemake/pipelines/alignment_qc/../../rules/panacus.smk", line 9:
+Command 'set -euo pipefail;  RUST_LOG=info panacus report ../working/t_groups.yaml > ../results/t_groups.html 2> ../logs/panacus/t_groups.log' returned non-zero exit status 101.
+[Tue Sep  2 14:56:34 2025]
+Error in rule panacus:
+    message: None
+    jobid: 13
+    input: ../working/t_groups.yaml
+    output: ../results/t_groups.html
+    log: ../logs/panacus/t_groups.log (check log file(s) for error details)
+    shell:
+        RUST_LOG=info panacus report ../working/t_groups.yaml > ../results/t_groups.html 2> ../logs/panacus/t_groups.log
+        (command exited with non-zero exit code)
+Removing output files of failed job panacus since they might be corrupted:
+../results/t_groups.html
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Tue Sep  2 14:56:34 2025]
+Error in rule panacus:
+    message: None
+    jobid: 13
+    input: ../working/t_groups.yaml
+    output: ../results/t_groups.html
+    log: ../logs/panacus/t_groups.log (check log file(s) for error details)
+    shell:
+        RUST_LOG=info panacus report ../working/t_groups.yaml > ../results/t_groups.html 2> ../logs/panacus/t_groups.log
+        (command exited with non-zero exit code)
+[Tue Sep  2 14:56:34 2025]
+Error in rule panacus:
+    message: None
+    jobid: 21
+    input: ../working/t_walks_gaps.yaml
+    output: ../results/t_walks_gaps.html
+    log: ../logs/panacus/t_walks_gaps.log (check log file(s) for error details)
+    shell:
+        RUST_LOG=info panacus report ../working/t_walks_gaps.yaml > ../results/t_walks_gaps.html 2> ../logs/panacus/t_walks_gaps.log
+        (command exited with non-zero exit code)
+Complete log(s): /home/heringer/Projects/hprc-qc/snakemake/pipelines/alignment_qc/.snakemake/log/2025-09-02T145634.001337.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

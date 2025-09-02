@@ -1,0 +1,176 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: codia001
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job        count
+-------  -------
+1              6
+all            1
+panacus       14
+total         21
+
+Select jobs to execute...
+Execute 4 jobs...
+[Tue Sep  2 15:06:18 2025]
+localrule panacus:
+    input: ../working/t_groups.yaml
+    output: ../results/t_groups.html
+    log: ../logs/panacus/t_groups.log
+    jobid: 13
+    reason: Missing output files: ../results/t_groups.html
+    wildcards: sample=t_groups
+    resources: tmpdir=/tmp
+
+[Tue Sep  2 15:06:18 2025]
+localrule 1:
+    input: /home/heringer/Projects/simple_files/simple_graphs/inversion.gfa
+    output: ../working/inversion.yaml
+    jobid: 8
+    reason: Missing output files: ../working/inversion.yaml
+    wildcards: sample=inversion
+    resources: tmpdir=/tmp
+
+[Tue Sep  2 15:06:18 2025]
+localrule panacus:
+    input: ../working/multiple_repeats.walks.yaml
+    output: ../results/multiple_repeats.walks.html
+    log: ../logs/panacus/multiple_repeats.walks.log
+    jobid: 17
+    reason: Missing output files: ../results/multiple_repeats.walks.html
+    wildcards: sample=multiple_repeats.walks
+    resources: tmpdir=/tmp
+
+[Tue Sep  2 15:06:18 2025]
+localrule panacus:
+    input: ../working/t_walks_gaps.yaml
+    output: ../results/t_walks_gaps.html
+    log: ../logs/panacus/t_walks_gaps.log
+    jobid: 21
+    reason: Missing output files: ../results/t_walks_gaps.html
+    wildcards: sample=t_walks_gaps
+    resources: tmpdir=/tmp
+
+[Tue Sep  2 15:06:18 2025]
+Finished jobid: 8 (Rule: 1)
+1 of 21 steps (5%) done
+Select jobs to execute...
+RuleException:
+CalledProcessError in file "/home/heringer/Projects/hprc-qc/snakemake/pipelines/alignment_qc/../../rules/panacus.smk", line 9:
+Command 'set -euo pipefail;  RUST_LOG=info panacus report ../working/t_groups.yaml > ../results/t_groups.html 2> ../logs/panacus/t_groups.log' returned non-zero exit status 101.
+[Tue Sep  2 15:06:18 2025]
+Error in rule panacus:
+    message: None
+    jobid: 13
+    input: ../working/t_groups.yaml
+    output: ../results/t_groups.html
+    log: ../logs/panacus/t_groups.log (check log file(s) for error details)
+    shell:
+        RUST_LOG=info panacus report ../working/t_groups.yaml > ../results/t_groups.html 2> ../logs/panacus/t_groups.log
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/home/heringer/Projects/hprc-qc/snakemake/pipelines/alignment_qc/../../rules/panacus.smk", line 9:
+Command 'set -euo pipefail;  RUST_LOG=info panacus report ../working/t_walks_gaps.yaml > ../results/t_walks_gaps.html 2> ../logs/panacus/t_walks_gaps.log' returned non-zero exit status 101.
+[Tue Sep  2 15:06:18 2025]
+Error in rule panacus:
+    message: None
+    jobid: 21
+    input: ../working/t_walks_gaps.yaml
+    output: ../results/t_walks_gaps.html
+    log: ../logs/panacus/t_walks_gaps.log (check log file(s) for error details)
+    shell:
+        RUST_LOG=info panacus report ../working/t_walks_gaps.yaml > ../results/t_walks_gaps.html 2> ../logs/panacus/t_walks_gaps.log
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/home/heringer/Projects/hprc-qc/snakemake/pipelines/alignment_qc/../../rules/panacus.smk", line 9:
+Command 'set -euo pipefail;  RUST_LOG=info panacus report ../working/multiple_repeats.walks.yaml > ../results/multiple_repeats.walks.html 2> ../logs/panacus/multiple_repeats.walks.log' returned non-zero exit status 101.
+[Tue Sep  2 15:06:18 2025]
+Error in rule panacus:
+    message: None
+    jobid: 17
+    input: ../working/multiple_repeats.walks.yaml
+    output: ../results/multiple_repeats.walks.html
+    log: ../logs/panacus/multiple_repeats.walks.log (check log file(s) for error details)
+    shell:
+        RUST_LOG=info panacus report ../working/multiple_repeats.walks.yaml > ../results/multiple_repeats.walks.html 2> ../logs/panacus/multiple_repeats.walks.log
+        (command exited with non-zero exit code)
+Execute 1 jobs...
+[Tue Sep  2 15:06:18 2025]
+localrule panacus:
+    input: ../working/small_polymorphism.yaml
+    output: ../results/small_polymorphism.html
+    log: ../logs/panacus/small_polymorphism.log
+    jobid: 5
+    reason: Missing output files: ../results/small_polymorphism.html
+    wildcards: sample=small_polymorphism
+    resources: tmpdir=/tmp
+
+Removing output files of failed job panacus since they might be corrupted:
+../results/t_groups.html
+Removing output files of failed job panacus since they might be corrupted:
+../results/t_walks_gaps.html
+Removing output files of failed job panacus since they might be corrupted:
+../results/multiple_repeats.walks.html
+RuleException:
+CalledProcessError in file "/home/heringer/Projects/hprc-qc/snakemake/pipelines/alignment_qc/../../rules/panacus.smk", line 9:
+Command 'set -euo pipefail;  RUST_LOG=info panacus report ../working/small_polymorphism.yaml > ../results/small_polymorphism.html 2> ../logs/panacus/small_polymorphism.log' returned non-zero exit status 101.
+[Tue Sep  2 15:06:18 2025]
+Error in rule panacus:
+    message: None
+    jobid: 5
+    input: ../working/small_polymorphism.yaml
+    output: ../results/small_polymorphism.html
+    log: ../logs/panacus/small_polymorphism.log (check log file(s) for error details)
+    shell:
+        RUST_LOG=info panacus report ../working/small_polymorphism.yaml > ../results/small_polymorphism.html 2> ../logs/panacus/small_polymorphism.log
+        (command exited with non-zero exit code)
+Removing output files of failed job panacus since they might be corrupted:
+../results/small_polymorphism.html
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Tue Sep  2 15:06:18 2025]
+Error in rule panacus:
+    message: None
+    jobid: 13
+    input: ../working/t_groups.yaml
+    output: ../results/t_groups.html
+    log: ../logs/panacus/t_groups.log (check log file(s) for error details)
+    shell:
+        RUST_LOG=info panacus report ../working/t_groups.yaml > ../results/t_groups.html 2> ../logs/panacus/t_groups.log
+        (command exited with non-zero exit code)
+[Tue Sep  2 15:06:18 2025]
+Error in rule panacus:
+    message: None
+    jobid: 17
+    input: ../working/multiple_repeats.walks.yaml
+    output: ../results/multiple_repeats.walks.html
+    log: ../logs/panacus/multiple_repeats.walks.log (check log file(s) for error details)
+    shell:
+        RUST_LOG=info panacus report ../working/multiple_repeats.walks.yaml > ../results/multiple_repeats.walks.html 2> ../logs/panacus/multiple_repeats.walks.log
+        (command exited with non-zero exit code)
+[Tue Sep  2 15:06:18 2025]
+Error in rule panacus:
+    message: None
+    jobid: 21
+    input: ../working/t_walks_gaps.yaml
+    output: ../results/t_walks_gaps.html
+    log: ../logs/panacus/t_walks_gaps.log (check log file(s) for error details)
+    shell:
+        RUST_LOG=info panacus report ../working/t_walks_gaps.yaml > ../results/t_walks_gaps.html 2> ../logs/panacus/t_walks_gaps.log
+        (command exited with non-zero exit code)
+[Tue Sep  2 15:06:18 2025]
+Error in rule panacus:
+    message: None
+    jobid: 5
+    input: ../working/small_polymorphism.yaml
+    output: ../results/small_polymorphism.html
+    log: ../logs/panacus/small_polymorphism.log (check log file(s) for error details)
+    shell:
+        RUST_LOG=info panacus report ../working/small_polymorphism.yaml > ../results/small_polymorphism.html 2> ../logs/panacus/small_polymorphism.log
+        (command exited with non-zero exit code)
+Complete log(s): /home/heringer/Projects/hprc-qc/snakemake/pipelines/alignment_qc/.snakemake/log/2025-09-02T150618.835662.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

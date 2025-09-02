@@ -1,0 +1,96 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: codia001
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job        count
+-------  -------
+1              5
+all            1
+panacus       14
+total         20
+
+Select jobs to execute...
+Execute 4 jobs...
+[Tue Sep  2 15:08:34 2025]
+localrule panacus:
+    input: ../working/t_groups.yaml
+    output: ../results/t_groups.html
+    log: ../logs/panacus/t_groups.log
+    jobid: 13
+    reason: Missing output files: ../results/t_groups.html
+    wildcards: sample=t_groups
+    resources: tmpdir=/tmp
+
+[Tue Sep  2 15:08:34 2025]
+localrule panacus:
+    input: ../working/t.yaml
+    output: ../results/t.html
+    log: ../logs/panacus/t.log
+    jobid: 9
+    reason: Missing output files: ../results/t.html
+    wildcards: sample=t
+    resources: tmpdir=/tmp
+
+[Tue Sep  2 15:08:34 2025]
+localrule panacus:
+    input: ../working/t_walks_gaps.yaml
+    output: ../results/t_walks_gaps.html
+    log: ../logs/panacus/t_walks_gaps.log
+    jobid: 21
+    reason: Missing output files: ../results/t_walks_gaps.html
+    wildcards: sample=t_walks_gaps
+    resources: tmpdir=/tmp
+
+[Tue Sep  2 15:08:34 2025]
+localrule panacus:
+    input: ../working/multiple_repeats.walks.yaml
+    output: ../results/multiple_repeats.walks.html
+    log: ../logs/panacus/multiple_repeats.walks.log
+    jobid: 17
+    reason: Missing output files: ../results/multiple_repeats.walks.html
+    wildcards: sample=multiple_repeats.walks
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file "/home/heringer/Projects/hprc-qc/snakemake/pipelines/alignment_qc/../../rules/panacus.smk", line 9:
+Command 'set -euo pipefail;  RUST_LOG=info panacus report ../working/multiple_repeats.walks.yaml > ../results/multiple_repeats.walks.html 2> ../logs/panacus/multiple_repeats.walks.log' returned non-zero exit status 101.
+[Tue Sep  2 15:08:34 2025]
+Error in rule panacus:
+    message: None
+    jobid: 17
+    input: ../working/multiple_repeats.walks.yaml
+    output: ../results/multiple_repeats.walks.html
+    log: ../logs/panacus/multiple_repeats.walks.log (check log file(s) for error details)
+    shell:
+        RUST_LOG=info panacus report ../working/multiple_repeats.walks.yaml > ../results/multiple_repeats.walks.html 2> ../logs/panacus/multiple_repeats.walks.log
+        (command exited with non-zero exit code)
+Removing output files of failed job panacus since they might be corrupted:
+../results/multiple_repeats.walks.html
+[Tue Sep  2 15:08:34 2025]
+Finished jobid: 9 (Rule: panacus)
+1 of 20 steps (5%) done
+[Tue Sep  2 15:08:34 2025]
+Finished jobid: 13 (Rule: panacus)
+2 of 20 steps (10%) done
+[Tue Sep  2 15:08:34 2025]
+Finished jobid: 21 (Rule: panacus)
+3 of 20 steps (15%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Tue Sep  2 15:08:34 2025]
+Error in rule panacus:
+    message: None
+    jobid: 17
+    input: ../working/multiple_repeats.walks.yaml
+    output: ../results/multiple_repeats.walks.html
+    log: ../logs/panacus/multiple_repeats.walks.log (check log file(s) for error details)
+    shell:
+        RUST_LOG=info panacus report ../working/multiple_repeats.walks.yaml > ../results/multiple_repeats.walks.html 2> ../logs/panacus/multiple_repeats.walks.log
+        (command exited with non-zero exit code)
+Complete log(s): /home/heringer/Projects/hprc-qc/snakemake/pipelines/alignment_qc/.snakemake/log/2025-09-02T150834.389941.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.
